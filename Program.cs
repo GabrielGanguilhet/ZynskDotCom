@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 // Início básico de um app web ASP.NET Core (Minimal + Controllers)
-// Compatível com .NET 10 / C# 14
+// Compatível com .NET 10 / C# 14 
 
 var builder = WebApplication.CreateBuilder(args);
 
