@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZYNSK</title>
+    <link rel="stylesheet" href="~/css/home.cscss">
 </head>
 <body>
 
@@ -13,7 +14,7 @@
         <header>
         
             <button 
-                type="button" 
+                type="button" onclick="window.open('https://zynsk.com.br', '_blank', 'noopener,noreferrer');"
             >Zynsk</button>
 
             <img src="~/Images/Icons/FoxIconTransparente.png" alt="Raposa Logo">
@@ -32,17 +33,75 @@
 
         </header>
 
-    <!-- Conteúdo Principal / Hero Section -->
+    <!-- Conteúdo Principal -->
     
+    <div>
 
+    <div id="Background">
+    <img src="~/Images/Icons/PampasGaucho.png" alt="Pampas Gaucho">
+    </div>
+    <h1>GABRIEL ZYNSK GANGUILHET</h1>
+    <p>Programação embarcada, backend, frontend, modelagem 3D, IoT;</p>
+
+    <button type="button"
+    onclick="window.location.href = 'mecatronica';"
+    >Mecatrônica</button>
+
+    <button type="button"
+    onclick="window.location.href = 'informatica';"
+    >Informática</button>
+    
+    
+    </div>
+
+    <div id="sobreEu">
+        
+        <button type="button">close</button>        
+
+        <h2>Sobre Mim</h2>
+        <p>Sou Gabriel Silva Fernandes Ganguilhet, conhecido artisticamente como Zynsk, um estudante gaúcho com formação técnica em Mecatrônica pelo IFSul e interesse multidisciplinar em tecnologia, programação, arte e criação digital.
+
+Meu estudo em Mecatrônica me proporcionou uma base em eletrônica, automação, programação e desenvolvimento de sistemas, enquanto meu interesse por computação tem me levado cada vez mais para o desenvolvimento de software, especialmente criação de sites, aplicações e projetos próprios.
+
+Paralelamente à área técnica, atuo como artista digital e desenvolvo ilustrações e personagens. Também sou escritor e criador de universos ficcionais, desenvolvendo histórias, personagens e sistemas próprios de poderes e energia.
+
+Atualmente, busco unir tecnologia e criatividade em projetos autorais, com o objetivo de construir uma carreira que me permita trabalhar com programação, desenvolvimento de projetos digitais e arte, mantendo liberdade para explorar diferentes áreas e ideias.
+</p>
+    </div>
 
     <!-- Rodapé -->
 
     <footer>
     
-
+    <p>© 2026 Zynsk. Todos os direitos reservados.</p>
+    <p>Desenvolvido por Gabriel Ganguilhet.</p>
+    <p>@GetLastUpdateLabel()</p>
 
     </footer>
 
 </body>
 </html>
+
+@functions {
+    public string GetLastUpdate()
+    {
+        var lastUpdate = System.IO.File.GetLastWriteTime
+
+        (System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Pages"));
+
+        TimeZoneInfo brasiliaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time");
+
+        DateTime lastUpdateBrasilia = TimeZoneInfo.ConvertTime(lastUpdate, brasiliaTimeZone);
+
+        return lastUpdateBrasilia.ToString("dd/MM/yyyy HH:mm:ss");
+
+    }
+
+    public string GetLastUpdateLabel()
+    {
+
+    return $"Última atualização: {GetLastUpdate()}";
+
+    }
+}
+
