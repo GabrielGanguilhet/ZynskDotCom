@@ -8,9 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Api\V1\" />
-    <Folder Include="wwwroot\Iot\" />
-    <Folder Include="wwwroot\Visual\" />
+    <Folder Include="Api\V1\iot\" />
+    <Folder Include="Models\" />
+    <Folder Include="Pages\Diario\" />
+    <Folder Include="Pages\Sobre\" />
+    <Folder Include="Pages\Projetos\" />
+    <Folder Include="Services\" />
+    <Folder Include="wwwroot\Images\backgrounds\" />
+    <Folder Include="wwwroot\Images\projects\" />
   </ItemGroup>
 
 </Project>
