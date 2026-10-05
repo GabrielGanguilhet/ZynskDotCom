@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZYNSK</title>
-    <link rel="stylesheet" href="~/css/home.cscss">
+    <link rel="stylesheet" href="~/css/home.css">
+    <link rel="icon" type="image/png" href="~/Images/Icons/FoxIconTransparente.png">
 </head>
 <body>
 
@@ -13,15 +14,13 @@
     
         <header>
         
-            <button 
-                type="button" onclick="window.open('https://zynsk.com.br', '_blank', 'noopener,noreferrer');"
-            >Zynsk</button>
+        <button type="button"
+                onclick="window.location.href = 'https://zynsk.com.br'">Zynsk</button>
 
             <img src="~/Images/Icons/FoxIconTransparente.png" alt="Raposa Logo">
             
-            <button 
-                type="button"
-            >Sobre Mim</button>
+               <button type="button" onclick="FecharEAbrirSobreEu()">Sobre Mim</button>
+               
         
                 <button onclick="window.open('https://github.com/GabrielGanguilhet', '_blank', 'noopener,noreferrer');"
                     type="button" 
@@ -40,7 +39,7 @@
     <div id="Background">
     <img src="~/Images/Icons/PampasGaucho.png" alt="Pampas Gaucho">
     </div>
-    <h1>GABRIEL ZYNSK GANGUILHET</h1>
+    <h1>GABRIEL <span>ZYNSK</span> GANGUILHET</h1>
     <p>Programação embarcada, backend, frontend, modelagem 3D, IoT;</p>
 
     <button type="button"
@@ -55,19 +54,34 @@
     </div>
 
     <div id="sobreEu">
-        
-        <button type="button">close</button>        
+
+        <!-- Sobre mim Screen-->
+        <button type="button" onclick="FecharEAbrirSobreEu()">
+            <img src="~/Images/Icons/Xis.png" alt="Xis de Fechar">
+        </button>        
 
         <h2>Sobre Mim</h2>
-        <p>Sou Gabriel Silva Fernandes Ganguilhet, conhecido artisticamente como Zynsk, um estudante gaúcho com formação técnica em Mecatrônica pelo IFSul e interesse multidisciplinar em tecnologia, programação, arte e criação digital.
 
-Meu estudo em Mecatrônica me proporcionou uma base em eletrônica, automação, programação e desenvolvimento de sistemas, enquanto meu interesse por computação tem me levado cada vez mais para o desenvolvimento de software, especialmente criação de sites, aplicações e projetos próprios.
+        <p>Sou Gabriel Silva Fernandes Ganguilhet, conhecido artisticamente como Zynsk, um estudante gaúcho com formação técnica em Mecatrônica pelo IFSul e interesse multidisciplinar em tecnologia, programação, arte e criação digital.</p>
+        
+        <p>Meu estudo em Mecatrônica me proporcionou uma base em eletrônica, automação, programação e desenvolvimento de sistemas, enquanto meu interesse por computação tem me levado cada vez mais para o desenvolvimento de software, especialmente criação de sites, aplicações e projetos próprios.</p>
+        
+        <p>Paralelamente à área técnica, atuo como artista digital e desenvolvo ilustrações e personagens. Também sou escritor e criador de universos ficcionais, desenvolvendo histórias, personagens e sistemas próprios de poderes e energia.</p>
+        
+        <p>Atualmente, busco unir tecnologia e criatividade em projetos autorais, com o objetivo de construir uma carreira que me permita trabalhar com programação, desenvolvimento de projetos digitais e arte, mantendo liberdade para explorar diferentes áreas e ideias.</p>
 
-Paralelamente à área técnica, atuo como artista digital e desenvolvo ilustrações e personagens. Também sou escritor e criador de universos ficcionais, desenvolvendo histórias, personagens e sistemas próprios de poderes e energia.
-
-Atualmente, busco unir tecnologia e criatividade em projetos autorais, com o objetivo de construir uma carreira que me permita trabalhar com programação, desenvolvimento de projetos digitais e arte, mantendo liberdade para explorar diferentes áreas e ideias.
-</p>
     </div>
+
+    <script>
+    function FecharEAbrirSobreEu() {
+        const sobreEu = document.getElementById("sobreEu");
+        if(sobreEu.classList.contains('aberto')) {
+            sobreEu.classList.remove('aberto');
+        } else {
+            sobreEu.classList.add('aberto');
+        }
+    }
+</script>
 
     <!-- Rodapé -->
 
@@ -103,5 +117,8 @@ Atualmente, busco unir tecnologia e criatividade em projetos autorais, com o obj
     return $"Última atualização: {GetLastUpdate()}";
 
     }
+    
+    
+    
 }
 
