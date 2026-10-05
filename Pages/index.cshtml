@@ -9,46 +9,39 @@
 <body>
 
     <!-- Cabeçalho / Barra de Navegação -->
-    <header>
-        <div class="logo">
-            <span>ZYNSK</span>
-            <img src="~/Images/Icons/FoxIconTransparente.png" alt="Logo Raposa">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre mim</a></li>
-                <li>
-                    <a href="https://github.com/GabrielGanguilhet" target="_blank" rel="noopener noreferrer">
-                        <img src="~/Images/Icons/FoxIcon.jpg" alt="GitHub">
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    
+        <header>
+        
+            <button 
+                type="button" 
+            >Zynsk</button>
+
+            <img src="~/Images/Icons/FoxIconTransparente.png" alt="Raposa Logo">
+            
+            <button 
+                type="button"
+            >Sobre Mim</button>
+        
+                <button onclick="window.open('https://github.com/GabrielGanguilhet', '_blank', 'noopener,noreferrer');"
+                    type="button" 
+                    id="github-button">
+                    <img 
+                        src="~/Images/Icons/GitHubIcon.png" 
+                        alt="GitHub Logo">
+                </button>
+
+        </header>
 
     <!-- Conteúdo Principal / Hero Section -->
-    <main>
-        <section id="hero">
-            <h1>GABRIEL ZYSNK GANGUILHET</h1>
-            <p>programação embarcada, backend, frontend, modelagem 3D, IoT;</p>
+    
 
-            <div class="botoes">
-                <a href="#mecatronica"><button type="button">Mecatrônica</button></a>
-                <a href="#informatica"><button type="button">Informática</button></a>
-            </div>
-        </section>
-    </main>
 
     <!-- Rodapé -->
+
     <footer>
-        <div class="info-desenvolvedor">
-            <p>Gabriel Silva Fernandes Ganguilhet</p>
-            <p><a href="http://zynsk.com.br">zynsk.com.br</a></p>
-            <p>Última atualização: <time datetime="2024-05-20">&lt;data&gt;</time></p>
-        </div>
-        <div class="logo-rodape">
-            <img src="caminho-da-logo-raposa-rodape.png" alt="Logo Raposa Rodapé">
-        </div>
+    
+
+
     </footer>
 
 </body>
