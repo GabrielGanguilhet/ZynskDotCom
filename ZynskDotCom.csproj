@@ -18,4 +18,12 @@
     <Folder Include="wwwroot\Images\projects\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Pages\index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+  </ItemGroup>
+
 </Project>

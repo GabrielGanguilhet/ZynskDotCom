@@ -1,51 +1,57 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
-// Início básico de um app web ASP.NET Core (Minimal + Controllers)
-// Compatível com .NET 10 / C# 14 
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Serviços
+// ======================================================
+// SERVIÇOS
+// ======================================================
+
+// Razor Pages (.cshtml)
+builder.Services.AddRazorPages();
+
+// Controllers (API)
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+// Health Check
 builder.Services.AddHealthChecks();
+
 
 var app = builder.Build();
 
-// Pipeline
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-    app.UseSwagger();
-    app.UseSwaggerUI(c => c.RoutePrefix = string.Empty); // Swagger UI disponível em /
-}
+
+// ======================================================
+// MIDDLEWARE
+// ======================================================
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseStaticFiles();
+
 app.UseAuthorization();
 
-// Endpoints
+
+// ======================================================
+// ROTAS
+// ======================================================
+
+// Páginas Razor
+// "/" -> Pages/Index.cshtml
+app.MapRazorPages();
+
+// Controllers da API
+// "/api/..."
 app.MapControllers();
-app.MapGet("/", () => Results.Redirect("/swagger"));
+
+// Health Check
+// "/health"
 app.MapHealthChecks("/health");
 
-// Inicia a aplicação
+
+// ======================================================
+// INICIA O SERVIDOR
+// ======================================================
+
 app.Run();
-
-
-// Exemplo simples de controller — pode remover ou mover para outro arquivo
-using Microsoft.AspNetCore.Mvc;
-
-[ApiController]
-[Route("api/[controller]")]
-public class HomeController : ControllerBase
-{
-    [HttpGet]
-    public IActionResult Get() => Ok(new { Message = "Aplicação Web iniciada com sucesso." });
-}
